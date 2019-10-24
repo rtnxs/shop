@@ -1,6 +1,7 @@
 require_relative 'lib/product'
 require_relative 'lib/book'
 require_relative 'lib/film'
+require_relative 'lib/disc'
 require_relative 'lib/productcollection'
 
 begin
@@ -9,4 +10,4 @@ rescue NotImplementedError
   puts "какой-то ребенок пытается создать себя используя статический метод родителя"
 end
 
-puts productcollection.sort!(type: :price, order: :desc) #asc desc
+puts productcollection#.sort!(type: :price, order: :desc) #asc desc
