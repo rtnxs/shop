@@ -10,4 +10,4 @@ rescue NotImplementedError
   puts "какой-то ребенок пытается создать себя используя статический метод родителя"
 end
 
-puts productcollection#.sort!(type: :price, order: :desc) #asc desc
+puts productcollection.sort!(type: :price, order: :desc) #asc desc

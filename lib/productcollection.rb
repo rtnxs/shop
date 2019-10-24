@@ -1,6 +1,6 @@
 class ProductCollection
   attr_reader :products
-  PRODUCTS_CLASS = [Book, Film]
+  PRODUCTS_CLASS = [Book, Film, Disc]
 
   def initialize(products)
     @products = products
