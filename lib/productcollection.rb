@@ -27,4 +27,9 @@ class ProductCollection
     @products.reverse! if params[:order] == :desc
     @products
   end
+
+  def sell(index)
+    @products[index].rest -= 1
+    @products.delete_if { |product| product.rest == 0 }
+  end
 end
