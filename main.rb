@@ -1,9 +1,12 @@
 require_relative 'lib/product'
 require_relative 'lib/book'
 require_relative 'lib/film'
+require_relative 'lib/productcollection'
 
-book = Book.new("17 обновление", 155, 12)
-film = Film.new("Первому игроку приготовиться", 243, 2)
+begin
+  productcollection = ProductCollection.from_dir
+rescue NotImplementedError
+  puts "какой-то ребенок пытается создать себя используя статический метод родителя"
+end
 
-puts "книга: #{book.name} - цена: #{book.price} - количестко: #{book.rest}"
-puts "фильм: #{film.name} - цена: #{film.price} - количество: #{film.rest}"
+puts productcollection.sort!(type: :price, order: :desc) #asc desc
