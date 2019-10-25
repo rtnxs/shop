@@ -24,7 +24,7 @@ while choice.to_i != 0 && productcollection.products.any?
 
   puts "\nЧто хотите купить:"
   choice = STDIN.gets.chomp
-  choice = rand(111111) if choice.to_i.to_s != choice
+  choice = -1 if choice.to_i.to_s != choice
 
   if (1..goods.size).to_a.include?(choice.to_i)
     basket.shopping_list << goods[choice.to_i - 1]

@@ -24,4 +24,8 @@ class Disc < Product
   def to_s
     "Альбом <<#{title}>>, #{genre}, #{year}год, #{super}"
   end
+
+  def update(params)
+    super
+  end
 end
