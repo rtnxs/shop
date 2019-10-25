@@ -1,13 +1,6 @@
 class Film < Product
   attr_accessor :year, :director, :title
 
-  def initialize(params)
-    @title = params[:title]
-    @director = params[:director]
-    @year = params[:year].to_i
-    super
-  end
-
   def self.from_file(file_path)
     lines = File.readlines(file_path, chomp: true)
     new(
@@ -17,6 +10,13 @@ class Film < Product
       price: lines[3],
       rest: lines[4]
     )
+  end
+
+  def initialize(params)
+    @title = params[:title]
+    @director = params[:director]
+    @year = params[:year].to_i
+    super
   end
 
   def to_s

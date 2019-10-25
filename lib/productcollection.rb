@@ -1,21 +1,22 @@
 class ProductCollection
-  attr_reader :products
   PRODUCTS_CLASS = [Book, Film, Disc]
 
-  def initialize(products)
-    @products = products
-  end
+  attr_reader :products
 
   def self.from_dir
     products = []
 
     PRODUCTS_CLASS.each do |class_name|
-      dir_path = Dir["#{__dir__}/../data/#{class_name.to_s.downcase}s"].join
+      dir_path = "#{__dir__}/../data/#{class_name.to_s.downcase}s"
       Dir["#{dir_path}/*"].
       each { |file| products << class_name.from_file(file) }
     end
 
     new(products)
+  end
+
+  def initialize(products)
+    @products = products
   end
 
   def to_a

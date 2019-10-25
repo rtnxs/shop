@@ -11,7 +11,8 @@ rescue NotImplementedError
   puts "какой-то ребенок пытается создать себя используя статический метод родителя"
 end
 
-productcollection.sort!(type: :price, order: :desc) #asc desc
+# по ключу=>значению order: :desc производится сортировка по убыванию
+productcollection.sort!(type: :price, order: :desc)
 basket = Basket.new
 
 choice = -1
