@@ -19,9 +19,8 @@ class Book < Product
     super
   end
 
-
   def to_s
-    "Книга <<#{title}>>, автор - #{autor}, Жанр: #{genre} #{super}"
+    "Книга «#{title}», автор - #{autor}, Жанр: #{genre} #{super}"
   end
 
   def update(params)
