@@ -40,7 +40,7 @@ if basket.empty?
 else
   puts "Вы купили:\n\n"
 
-  basket.tota_list.each do |product, amount|
+  basket.total_list.each do |product, amount|
     puts "#{product.to_s_in_total}: #{amount}шт"
   end
 
