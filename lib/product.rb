@@ -6,7 +6,7 @@ class Product
   end
 
   def initialize(params)
-    @rest  = params[:rest].to_i
+    @rest = params[:rest].to_i
     @price = params[:price].to_f
   end
 
@@ -15,9 +15,9 @@ class Product
   end
 
   def update(params)
-    params.each_pair do |key, value|
-      var = self.instance_variables.find{|i| i.to_s == "@#{key}"}
-      self.instance_variable_set(var, value)
+    params.each do |key, value|
+      var = instance_variables.find { |i| i.to_s == "@#{key}" }
+      instance_variable_set(var, value)
     end
   end
 end

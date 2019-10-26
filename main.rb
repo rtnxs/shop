@@ -28,7 +28,7 @@ while choice != 0 && productcollection.products.any?
     basket.shopping_list << goods[choice - 1]
     productcollection.sell(choice - 1)
     puts "\nВы выбрали #{basket.shopping_list.last}"
-    puts "Всего товаров на сумму: #{basket.amount} руб.\n\n"
+    puts "Всего товаров на сумму: #{basket.total} руб.\n\n"
   else
     puts "\nНе правильно набран номер. Попробуйте позвонить " \
       "позднее\n\n" unless choice == 0
@@ -39,6 +39,10 @@ if basket.empty?
   puts "Вы ничего так и не выбрали, приходите ещё.\n\n"
 else
   puts "Вы купили:\n\n"
-  puts basket.shopping_list
-  puts "\nС Вас - #{basket.amount} руб. Спасибо за покупки!"
+
+  basket.tota_list.each do |product, amount|
+    puts "#{product.to_s_in_total}: #{amount}шт"
+  end
+
+  puts "\nС Вас - #{basket.total} руб. Спасибо за покупки!"
 end

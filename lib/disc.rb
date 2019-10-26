@@ -4,12 +4,12 @@ class Disc < Product
   def self.from_file(file_path)
     lines = File.readlines(file_path, chomp: true)
     new(
-      title: lines[0],
-      singer: lines[1],
-      genre: lines[2],
-      year: lines[3],
-      price: lines[4],
-      rest: lines[5]
+        title: lines[0],
+        singer: lines[1],
+        genre: lines[2],
+        year: lines[3],
+        price: lines[4],
+        rest: lines[5]
     )
   end
 
@@ -22,7 +22,11 @@ class Disc < Product
   end
 
   def to_s
-    "Альбом #{singer} - «#{title}», #{genre}, #{year}год, #{super}"
+    "#{to_s_in_total}, #{super}"
+  end
+
+  def to_s_in_total
+    "Альбом #{singer} - «#{title}», #{genre}, #{year}год"
   end
 
   def update(params)
