@@ -1,5 +1,5 @@
 class ProductCollection
-  PRODUCTS_CLASS = [Book, Film, Disc]
+  PRODUCTS_CLASSES = [Book, Film, Disc]
 
   attr_reader :products
 
